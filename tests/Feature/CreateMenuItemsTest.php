@@ -16,8 +16,6 @@ class CreateMenuItemsTest extends TestCase
      */
     public function it_can_create_menu_items_and_associate_them_with_a_menu()
     {
-        $this->withoutExceptionHandling();
-
         $menu = factory(Menu::class)->create();
 
         $response = $this->postJson("/api/menus/{$menu->getKey()}/items", [

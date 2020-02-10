@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection as BaseCollection;
 
 class Menu extends Model
 {
@@ -62,9 +63,9 @@ class Menu extends Model
 
     /**
      * @param array $items
-     * @return Collection
+     * @return BaseCollection
      */
-    public function createChildren(array $items): Collection
+    public function createChildren(array $items): BaseCollection
     {
         foreach ($items as $item) {
             DB::transaction(function () use ($item) {
