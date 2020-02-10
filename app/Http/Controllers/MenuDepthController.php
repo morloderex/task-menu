@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
+
 class MenuDepthController extends Controller
 {
     /**
      * Display the specified resource.
      *
      * @param  mixed  $menu
-     * @return \Illuminate\Http\Response
+     * @return array
      */
-    public function show($menu)
+    public function __invoke($menu)
     {
-        //
+        return [
+            'depth' => Item::getDepth($menu)
+        ];
     }
 }

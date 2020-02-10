@@ -14,7 +14,10 @@ class MenuLayerController extends Controller
      */
     public function show($menu)
     {
-        //
+        // use the menu and layer id to scope the item models to only get the descendants (e.g childs of the item) of the layer id (layer id being a given item id in this case)
+
+        // then use `render` function on Menu model combined with `laravel-nestedset`'s `toTree` function
+        // to render the nodes
     }
 
     /**
@@ -25,6 +28,10 @@ class MenuLayerController extends Controller
      */
     public function destroy($menu)
     {
-        //
+        // use the menu and layer id to scope the item models to only get the descendants (e.g childs of the item) of the layer id (layer id being a given item id in this case)
+
+        // then resursively call the `delete()` on the Item model in order to delete them.
+
+        // finally return 204 no content response
     }
 }
